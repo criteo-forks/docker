@@ -1,5 +1,5 @@
 module DockerCookbook
-  class DockerBase < ChefCompat::Resource
+  class DockerBase < Chef::Resource::LWRPBase
     require_relative 'helpers_auth'
     require_relative 'helpers_base'
 
