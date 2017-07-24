@@ -33,6 +33,7 @@ module DockerCookbook
 
       def dockerd_bin
         return '/usr/bin/docker' if Gem::Version.new(docker_major_version) < Gem::Version.new('1.12')
+        return '/usr/bin/dockerd-current' if Gem::Version.new(docker_major_version) <= Gem::Version.new('1.12') && platform_family?('rhel')
         '/usr/bin/dockerd'
       end
 
